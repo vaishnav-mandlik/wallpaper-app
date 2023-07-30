@@ -1,19 +1,10 @@
-import {
-  Text,
-  View,
-  useColorScheme,
-  SafeAreaView,
-  StatusBar,
-} from "react-native";
+import { Text, SafeAreaView, StatusBar } from "react-native";
 import React from "react";
-import { useRouter, Stack } from "expo-router";
-// TrendingCard
+import { Stack } from "expo-router";
 import TrendingCard from "../components/Home/TrendingCard";
+import Category from "../components/Home/Category";
 
 const Home = () => {
-  const router = useRouter();
-  const theme = useColorScheme();
-  //   console.log(theme);
   return (
     <SafeAreaView
       style={{
@@ -32,8 +23,18 @@ const Home = () => {
           headerShown: false,
         }}
       />
+      <Text
+        style={{
+          color: "#F9B520",
+          fontSize: 20,
+          fontWeight: "bold",
+          margin: 10,
+        }}
+      >
+        Latest Wallpaper for you
+      </Text>
       <TrendingCard />
-      <Text style={{ color: "#fff" }}>Home</Text>
+      <Category />
     </SafeAreaView>
   );
 };
